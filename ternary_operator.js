@@ -1,4 +1,4 @@
-/*
+
 const age = 20;
 
 if (age >= 18){
@@ -40,23 +40,23 @@ let newPrice
 newPrice = (price >= 5000 && islove === true) ?  price -  price * 10 / 100 : ( price + price * 10 /100)
 
 console.log(newPrice);
-*/
+
 
 // mested condition
 
 let foodPrice = 400;
 let isMembarship = true;
-let discountPrice 
+let DiscountPrice 
 let priceForLeader 
 
 if (isMembarship === true){
     if (foodPrice >= 1000) {
-        discountPrice = foodPrice / 4;
-        priceForLeader = foodPrice - discountPrice
-    //  console.log(priceForLeader);        
+        DiscountPrice = foodPrice / 4;
+        priceForLeader = foodPrice - DiscountPrice
+     console.log(priceForLeader);        
     }
  else{
-    // console.log(foodPrice);
+    console.log(foodPrice);
  }
 }
 
