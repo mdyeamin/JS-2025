@@ -11,3 +11,6 @@ const username = [
 
 const userFive =  username.includes("userFive");
 console.log(userFive); // true
+
+const userSix =  username.includes("userSix");
+console.log(userSix); // false
