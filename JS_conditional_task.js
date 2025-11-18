@@ -7,15 +7,15 @@ Free Drinks
 */
 // answer 1
 
-let burger = 600;
-let coke = 30;
-if (burger >= 500) {
-coke = 0    
+let burgerPrice = 300;
+let cokePrice = 30;
+if (burgerPrice >= 500) {
+cokePrice = 0    
 }
 else{
     coke = 30;
 }
-console.log(coke);
+// console.log(coke);
 
 
 /*
@@ -34,8 +34,8 @@ Create a JavaScript program that calculates the Body Mass Index (BMI) and assign
 
 // answer 2
 
-let weight = 56;
-let height = 1.75;
+let weight = 75;
+let height = 1.72;
 let BMI = weight / (height * height)
 let category;
 
@@ -52,7 +52,7 @@ else{
     category = "you are obese"
 }
 console.log(category);
-console.log( parseInt(BMI));
+console.log( parseFloat(BMI).toFixed(2));
 
 
 /*
@@ -103,7 +103,7 @@ if (my_score >= 80) {
   myShouldToDo = "go to home and sleep and act sad";
 }
 
-console.log(myShouldToDo);
+// console.log(myShouldToDo);
 
 
 
@@ -133,7 +133,7 @@ if (num1 > num2) {
 else{
     result = num1 + num2;
 }
-console.log(result);
+// console.log(result);
 
 
 /*
@@ -163,5 +163,5 @@ else if (age >= 60) {
 else{
     ticketFare
 }
-console.log(ticketFare);
+// console.log(ticketFare);
 

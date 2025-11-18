@@ -64,3 +64,6 @@ if (isMembarship === true){
 
 foodPrice = (isMembarship === true) ? foodPrice >= 1000 ? foodPrice - foodPrice /4: foodPrice : foodPrice;
 console.log(foodPrice);
+
+const isMember = false;
+
