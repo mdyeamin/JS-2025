@@ -1,0 +1,47 @@
+// first 50 product price is 100
+// secund 51to100 product price is 90
+//avobe 100 product price is 80
+
+function calculateTotalPrice(quantity) {
+  let applePrice;
+  if (quantity <= 100) {
+    if (quantity <= 0) {
+      console.log("please enter a valid number");
+    } else {
+      applePrice = quantity * 100;
+    }
+  } else {
+    applePrice = quantity * 90;
+  }
+  return applePrice;
+}
+
+// console.log(calculateTotalPrice(90));
+
+function totalCalculatePrice(quantity) {
+  const first100Price = 100;
+  const second100Price = 95;
+  const above200Price = 90;
+
+  if (quantity <= 100) {
+    const total = quantity * first100Price;
+    return total;
+  } else if (quantity <= 200) {
+    const first100TotalPrice = 100 * first100Price;
+    const skipFirst100Total = quantity - 100;
+    const remainingTotal = skipFirst100Total * second100Price;
+    const total = first100TotalPrice + remainingTotal;
+    return total;
+  } else {
+    const first100TotalPrice = 100 * first100Price;
+    const second100TotalPrice = 100 * second100Price;
+    const skipFirst200Total = quantity - 200;
+    const remainingTotal = skipFirst200Total * above200Price;
+
+    const total = first100TotalPrice + second100TotalPrice + remainingTotal;
+
+    return total;
+  }
+}
+
+console.log(totalCalculatePrice(240));
