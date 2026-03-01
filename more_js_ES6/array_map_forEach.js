@@ -20,3 +20,14 @@ const doubled = items.map(doubleIt);
 // method with inline arrow function
 const doubleIt2 = items.map(num => num * num); 
 console.log(doubleIt2);
+
+
+
+const friends = ["Alice", "Bob", "Charlie", "David", "Eve", "Frank", "Grace", "Heidi", "Ivan", "Judy"];
+
+// using for loop to get the first 5 friends
+const firstFiveFriends = friends.slice(0, 5);
+console.log(firstFiveFriends);
+
+const firstLetters =  friends.map(friend => friend[0]);
+console.log(firstLetters);
