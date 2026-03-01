@@ -51,4 +51,11 @@ const prices = products.map((product, index, allArray)=> {
     return discountedPrice;
 });
 
-console.log(prices);
+// console.log(prices);
+
+const result = products.forEach(product =>{
+    console.log(product.name, product.price);
+    
+})
+
+console.log(result); // Output: undefined (forEach does not return a new array)
