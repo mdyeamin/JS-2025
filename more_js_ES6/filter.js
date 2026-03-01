@@ -19,5 +19,5 @@ const students = [
     {name: 'Frank', age: 19, grade: 80 }    
 ];
 
-const clildStudents = students.filter(student=> (student.age <= 17))
-console.log(clildStudents);
+const childStudents = students.filter(student=> (student.age <= 17))
+console.log(childStudents);
