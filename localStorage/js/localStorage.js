@@ -10,24 +10,49 @@ const gerNumberFromLS = () => {
   console.log(number);
 };
 
+const addProduct = () => {
+  const quantity = document.getElementById("quantity").value;
+  const product = document.getElementById("product").value;
+  const disabled = document.getElementById("addProduct");
+  const div = document.getElementById("ShowProduct");
+  div.innerHTML = "";
+  // ShowProduct(product, quantity);
+  storedFromCart(product, quantity);
 
-const addProduct=()=>{
-const product = document.getElementById("product").value;
-const quantity = document.getElementById("quantity").value;
+  document.getElementById("product").value = "";
+  document.getElementById("quantity").value = "";
+};
 
-ShowProduct(product,quantity);
-document.getElementById("product").value = '';
-document.getElementById("quantity").value = '';
-}
+const cart = {};
 
-const ShowProduct=(product,quantity)=>{
-const li = document.createElement("li");
-li.innerHTML = `
-                <li class="flex items-center justify-between p-4 bg-slate-50 rounded-xl border border-slate-100 group hover:border-[#6610f2] transition-colors">
-                    <span class="font-bold text-slate-700">${product}</span>
-                    <span class="bg-indigo-100 text-[#6610f2] px-3 py-1 rounded-lg font-bold text-sm">${quantity} Unit</span>
+const createCart = () => {
+  // return JSON.parse(localStorage.getItem("cart")) || {};
+  const data = localStorage.getItem("cart");
+  return data ? JSON.parse(data) : {};
+};
+
+const storedFromCart = (product, quantity) => {
+  const cart = createCart();
+  cart[product] = quantity;
+  localStorage.setItem("cart", JSON.stringify(cart));
+  ShowProduct(cart);
+};
+
+const ShowProduct = (cart) => {
+  for (const item in cart) {
+    const quantity = cart[item];
+    console.log(item, quantity);
+
+    const ul = document.createElement("ul");
+
+    ul.innerHTML = `
+                <li class="${item || quantity ? "flex" : "hidden"} items-center justify-between p-4 bg-slate-50 rounded-xl border border-slate-100 group hover:border-[#6610f2] transition-colors">
+                    <span class="font-bold text-slate-700">${item}</span>
+                    <span class="bg-indigo-100 text-[#6610f2] px-3 py-1 rounded-lg font-bold text-sm">${quantity} ${quantity ? "Unit" : ""}</span>
                 </li>
-`
-const ul = document.getElementById("ShowProduct");
-ul.append(li)
-}
+`;
+    const div = document.getElementById("ShowProduct");
+    div.append(ul);
+  }
+};
+addProduct();
